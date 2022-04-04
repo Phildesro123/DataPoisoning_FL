@@ -99,11 +99,12 @@ venv.bak/
 
 # mkdocs documentation
 /site
-
+/.vscode
 # mypy
 .mypy_cache/
 
 .DS_Store
+federated_learning.zip
 
 data_loaders/
 data/

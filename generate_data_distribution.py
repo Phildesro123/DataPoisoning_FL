@@ -1,6 +1,6 @@
 from loguru import logger
 import pathlib
-import os
+import os, ssl
 from federated_learning.arguments import Arguments
 from federated_learning.datasets import CIFAR10Dataset
 from federated_learning.datasets import FashionMNISTDataset
@@ -8,6 +8,8 @@ from federated_learning.utils import generate_train_loader
 from federated_learning.utils import generate_test_loader
 from federated_learning.utils import save_data_loader_to_file
 
+if (not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None)):
+    ssl._create_default_https_context = ssl._create_unverified_context
 
 if __name__ == '__main__':
     args = Arguments(logger)
